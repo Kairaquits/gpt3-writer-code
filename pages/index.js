@@ -3,13 +3,13 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import React, { useState } from 'react';
 
-const [userInput, setUserInput]= useState('');
-const onUserChangedText = (event)=>{
-  console.log(event.target.value);
-  setUserInput(event.target.value);
+const Home = () => {
+
+  const [userInput, setUserInput]= useState('');
+  const onUserChangedText = (event)=>{
+    setUserInput(event.target.value);
 }
 
-const Home = () => {
   return (
     <div className="root">
       <Head>
@@ -18,18 +18,25 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>sup, insert your headline here</h1>
+            <h1>Botvocate</h1>
           </div>
           <div className="header-subtitle">
-            <h2>insert your subtitle here</h2>
+            <h2>Use AI-powered advocacy to change the world</h2>
           </div>
         </div>
       </div>
-      <div className='propmt-container'>
+      <div className='prompt-container'>
         <textarea placeholder="start typing here" className='prompt-box'
-        value={userInput} onChange={onUserChangedText}>
+        value={userInput} onChange={onUserChangedText}/>
 
-        </textarea>
+          <div className="prompt-buttons">
+            <a className='generate-button' onClick={null}>
+            <div className="generate">
+                <p>Generate</p>
+              </div>
+            </a>
+              
+          </div>
       </div>
       <div className="badge-container grow">
         <a
